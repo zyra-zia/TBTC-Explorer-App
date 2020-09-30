@@ -2,6 +2,10 @@ html, body {
   font-family: 'Work Sans', sans-serif;
 }
 
+.App {
+  margin-bottom: 50px;
+}
+
 .logo {
     width: 40px;
     height: 40px;
@@ -22,10 +26,26 @@ hr.hide {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 90%;
     display: inline-block;
-    float: left;
   }
+
+.explorer .truncate {
+  max-width: 90%;
+  float: left;
+}
+
+.lotSize {
+  padding: 0;
+}
+
+.details .truncate {
+  display: inline-block;
+  max-width: 45%;
+}
+
+.details .list-group-item a, .details .list-group-item span, .details .list-group-item svg {
+  vertical-align: middle;
+}
 
 .transaction .type, .transaction .timestamp, .transaction .lotSize, li.heading{
     text-align: center;

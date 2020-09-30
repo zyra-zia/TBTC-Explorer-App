@@ -34,7 +34,7 @@ export class TransactionTable extends React.Component {
                             <div className="col-1">Step</div>
                             <div className="col-3">User Address</div>
                             <div className="col-3">Transaction Hash</div>
-                            <div className="col-1">Lot Size</div>
+                            <div className="col-1 lotSize">Lot Size</div>
                             <div className="col-2">Type</div>
                             <div className="col-2">Time</div>
                         </div>

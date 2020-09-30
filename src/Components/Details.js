@@ -122,20 +122,26 @@ function Details() {
                                             <h6 className="card-title">Deposit Transactions</h6>
                                             <ul className="list-group list-group-flush">
                                                 <li className="list-group-item">
-                                                    <a href={`https://etherscan.io/tx/${deposit.creationTx.id}`}>
+                                                    <span className="h6">
+                                                        Deposit Created:
+                                                    </span>
+                                                    <a href={`https://etherscan.io/tx/${deposit.creationTx.id}`} className="truncate">
                                                         {deposit.creationTx.id}
-                                                        <External/>
                                                     </a>
+                                                    <External/>
                                                     <span className="timestamp">
                                                         {moment.unix(deposit.creationTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                     </span>
                                                 </li>
                                                 {deposit.pubKeyTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${deposit.pubKeyTx.id}`}>
+                                                        <span className="h6">
+                                                            Bitcoin Address Generated:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${deposit.pubKeyTx.id}`} className="truncate">
                                                             {deposit.pubKeyTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(deposit.pubKeyTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
@@ -145,10 +151,13 @@ function Details() {
                                                 }
                                                 {deposit.fundingTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${deposit.fundingTx.id}`}>
+                                                        <span className="h6">
+                                                            Deposit Funded:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${deposit.fundingTx.id}`} className="truncate">
                                                             {deposit.fundingTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(deposit.fundingTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
@@ -158,10 +167,13 @@ function Details() {
                                                 }
                                                 {deposit.mintingTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${deposit.mintingTx.id}`}>
+                                                        <span className="h6">
+                                                            TBTC Minted:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${deposit.mintingTx.id}`} className="truncate">
                                                             {deposit.mintingTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(deposit.mintingTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
@@ -179,10 +191,13 @@ function Details() {
                                             <ul className="list-group list-group-flush">
                                                 {redemption !== null && redemption.requestTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${redemption.requestTx.id}`}>
+                                                        <span className="h6">
+                                                            Redemption Requested:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${redemption.requestTx.id}`} className="truncate">
                                                             {redemption.requestTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(redemption.requestTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
@@ -192,10 +207,13 @@ function Details() {
                                                 }
                                                 {redemption !== null && redemption.signatureTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${redemption.signatureTx.id}`}>
+                                                        <span className="h6">
+                                                            Redemption Signature:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${redemption.signatureTx.id}`} className="truncate">
                                                             {redemption.signatureTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(redemption.signatureTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
@@ -205,10 +223,13 @@ function Details() {
                                                 }
                                                 {redemption !== null && redemption.redeemTx !== null?
                                                     <li className="list-group-item">
-                                                        <a href={`https://etherscan.io/tx/${redemption.redeemTx.id}`}>
+                                                        <span className="h6">
+                                                            Submit Proof/Redeemed:
+                                                        </span>
+                                                        <a href={`https://etherscan.io/tx/${redemption.redeemTx.id}`} className="truncate">
                                                             {redemption.redeemTx.id}
-                                                            <External/>
                                                         </a>
+                                                        <External/>
                                                         <span className="timestamp">
                                                             {moment.unix(redemption.redeemTx.timestamp).format("HH:mm:ss DD/MM/YYYY")}
                                                         </span>
