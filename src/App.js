@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import Explorer from "./Components/Explorer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Details from "./Components/Details"
 
 function App() {
+
+  const client = new ApolloClient({
+    uri: "https://api.thegraph.com/subgraphs/name/zyra-zia/tbtc-explorer"
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="App container">
+          <img src="/images/tbtc.jpg" className="logo" alt="logo"/>
+          <h4>TBTC <small className="text-muted">Deposit and Redemption Explorer</small></h4>
+          <hr className="hide"/>
+          <Switch>
+            <Route path="/" exact >
+                <Explorer />
+            </Route>
+            <Route path="/details/:depositId">
+              <Details />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
